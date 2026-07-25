@@ -27,10 +27,14 @@ Opus 5 tuning that matters for this role:
 
 ## Executors
 
+Codex runs the **GPT‑5.6 family — Sol, Terra, Luna, in descending size.** GPT‑5.5 is the
+previous generation and is not part of the rotation; reach for it only if the 5.6 family is
+unavailable.
+
 | Executor | Model | Selection | Effort | Notes |
 |---|---|---|---|---|
-| **Codex — Sol** | GPT‑5.6 | **default** | always `high` | Cross-family critique, resumable sessions. Main risk: over-engineering — §5 of the guidelines is aimed at it. |
-| **Codex — Terra** | GPT‑5.5 | alternate | always `high` | Same binding as Sol; pick when Sol is unavailable or a cheaper pass is wanted. |
+| **Codex — Sol** | GPT‑5.6 Sol (largest) | **default** | always `high` | Cross-family critique, resumable sessions. Main risk: over-engineering — §5 of the guidelines is aimed at it. |
+| **Codex — Terra** | GPT‑5.6 Terra (mid) | alternate | always `high` | Same binding as Sol; pick when Sol is unavailable or a cheaper pass will do. Luna, the smallest of the family, is not in the executor rotation. |
 | **Claude subagent** | Fable 5 | available | `high` | Strongest read-only pre-flight gate (tool allowlist). **Same family as the planner** — correlated blindspots, so cross-family review is still required. May refuse security-adjacent work mid-session. |
 | **Kimi** | Kimi K3 | **opt-in, per session, on explicit request only** | — | Mechanical, well-scoped, wide-context work. **Never for security-adjacent sessions.** Never selected on the agent's own initiative; does not change the loop default. |
 

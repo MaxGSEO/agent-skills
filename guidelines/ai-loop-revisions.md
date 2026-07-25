@@ -1,8 +1,8 @@
 # ai-loop revisions — Opus 5 roster + Claude 5-class prompting
 
-Exact edits to apply to the personal `ai-loop` skill (`~/.claude/skills/ai-loop/`). They were
-authored against the version synced on 2026-07-25 and are not applied automatically: the skill
-lives outside this repository, so apply them there and keep this file as the record of why.
+The edits made to the personal `ai-loop` skill, which lives outside this repository at
+`D:\Python\skills\ai-loop`. They were applied to the copy synced on 2026-07-25 and shipped as an
+installable zip; this file is the record of what changed and why.
 
 Two things drive the changes: the planner is now **Claude Opus 5**, and Anthropic's prompting
 guidance for Claude 5-class models changes what a good kickoff prompt looks like.
@@ -54,7 +54,7 @@ In the second Topology bullet, replace the Codex clause:
 **New**
 
 ```markdown
-**Codex** is dispatched from Claude Code via the `codex-plugin-cc` plugin (`/codex:rescue`, `/codex:review`, `/codex:adversarial-review`, `/codex:status`, `/codex:result`), running **GPT‑5.6 (Sol)** by default or **GPT‑5.5 (Terra)** as the alternate, always at `--effort high`.
+**Codex** is dispatched from Claude Code via the `codex-plugin-cc` plugin (`/codex:rescue`, `/codex:review`, `/codex:adversarial-review`, `/codex:status`, `/codex:result`), running the **GPT‑5.6 family — Sol, Terra, Luna in descending size** — with **Sol** as the default and **Terra** as the alternate, always at `--effort high`.
 ```
 
 ## R3 — `SKILL.md` › Choosing an executor › comparison table
@@ -62,7 +62,7 @@ In the second Topology bullet, replace the Codex clause:
 Add a **Model** row directly under the `Selection` row:
 
 ```markdown
-| Model | **GPT‑5.6 (Sol)** default, GPT‑5.5 (Terra) alternate | Cursor-hosted | Fable 5 | Kimi K3 |
+| Model | **GPT‑5.6 Sol** default, **Terra** alternate (Luna unused) | Cursor-hosted | Fable 5 | Kimi K3 |
 ```
 
 And change the Kimi cell of the `Refusal risk` row from `not characterized` to:
@@ -82,7 +82,7 @@ not characterized — **excluded from security-adjacent sessions by policy**
 **New**
 
 ```markdown
-- **Codex** — the general default, on **GPT‑5.6 (Sol)**, always `--effort high` (**GPT‑5.5 / Terra** as the alternate): full reasoning trace, cross-family critique, resumable sessions. Its characteristic failure mode is over-engineering, so the §5 "Search before you build" guardrails in the repo's engineering guidelines are aimed squarely at it and must be carried into the kickoff.
+- **Codex** — the general default, on **GPT‑5.6 Sol**, always `--effort high` (**Terra** as the alternate when Sol is unavailable or a cheaper pass will do; **Luna** is not in the rotation, and GPT‑5.5 is the previous generation — reach for it only if the 5.6 family is unavailable): full reasoning trace, cross-family critique, resumable sessions. Its characteristic failure mode is over-engineering, so the repo's "search before you build" guardrails must be carried into the kickoff verbatim, not merely referenced.
 ```
 
 In the **Kimi** bullet, append to the "Not for" sentence:
