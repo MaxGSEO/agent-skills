@@ -11,6 +11,7 @@ hooks/        → Session lifecycle hooks
 .claude/commands/ → Slash commands (/spec, /plan, /build, /test, /review, /code-simplify, /ship; plus /webperf specialist audit)
 references/   → Supplementary checklists (testing, performance, security, accessibility, observability)
 docs/         → Setup guides for different tools
+guidelines/   → Operator agent instructions distributed to Claude Code, Codex, and Cursor (see guidelines/README.md)
 ```
 
 ## Skills by Phase

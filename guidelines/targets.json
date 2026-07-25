@@ -1,0 +1,47 @@
+{
+  "_comment": "Where the engineering guidelines get distributed. Edit paths to match the machine, then run: node scripts/sync-guidelines.js --check | --write",
+  "blockId": "engineering-guidelines",
+  "tools": {
+    "claude": {
+      "label": "Claude Code",
+      "file": "CLAUDE.md",
+      "sources": ["engineering-guidelines.md", "model-roster.md"]
+    },
+    "codex": {
+      "label": "Codex",
+      "file": "AGENTS.md",
+      "sources": ["engineering-guidelines.md"]
+    },
+    "cursor": {
+      "label": "Cursor",
+      "file": ".cursor/rules/engineering-guidelines.mdc",
+      "sources": ["engineering-guidelines.md"],
+      "dedicated": true,
+      "frontmatter": {
+        "description": "Engineering guidelines: think before coding, simplicity first, surgical changes, goal-driven execution.",
+        "alwaysApply": true
+      }
+    }
+  },
+  "global": [
+    { "name": "Claude Code (global)", "tool": "claude", "path": "~/.claude/CLAUDE.md" },
+    { "name": "Codex (global)", "tool": "codex", "path": "~/.codex/AGENTS.md" }
+  ],
+  "projects": [
+    {
+      "name": "Knowledge_Graph_App",
+      "root": "D:/Python/Knowledge_Graph_App",
+      "tools": ["claude", "codex", "cursor"]
+    },
+    {
+      "name": "ContentBuilder",
+      "root": "D:/Python/ContentBuilder",
+      "tools": ["claude", "codex", "cursor"]
+    },
+    {
+      "name": "StackingGrapes",
+      "root": "D:/Python/StackingGrapes",
+      "tools": ["claude", "codex", "cursor"]
+    }
+  ]
+}
